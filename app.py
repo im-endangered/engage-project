@@ -10,13 +10,14 @@ import numpy as np
 from datetime import datetime
 import pickle
 from flask import Flask, render_template, Response, redirect, url_for, request, jsonify
+from werkzeug.utils import secure_filename
 
 
 app = Flask(__name__)
+UPLOAD_FOLDER= './users'
 
 path = "users"
 app = Flask(__name__)
-camera = cv2.VideoCapture(0)
 images = []
 classNames = []
 mylist = os.listdir(path)
@@ -40,7 +41,20 @@ def findEncodings(images):
 
 encoded_face_train = findEncodings(images)
 
+@app.route('/register')
+def register():
+    return render_template('signup.html')
 
+@app.route('/uploader', methods = ['GET', 'POST'])
+def upload_file():
+   if request.method == 'POST':
+      f = request.files['file']
+      name=request.form.get('username')+'.jpg'
+      if not f or not name:
+          return "Something wnet wrong"
+      f.save(os.path.join(UPLOAD_FOLDER,secure_filename(name)))
+      return 'Sign up successful'
+		
 @app.route("/")
 def default():
     return render_template("index.html")

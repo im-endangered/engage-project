@@ -7,17 +7,23 @@
     <title>Document</title>
     <script src="{{ url_for('static',filename='script.js') }}"></script>
     <script src="{{ url_for('static',filename='webcam.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles.css') }}">
   </head>
   <body>
-    <form method="POST" enctype="multipart/form-data" id="myForm">
-      <table>
-        <tr>
-          <td><input type="button" value="Login" onclick="upload()" /></td>
-        </tr>
-      </table>
-    </form>
-    <div id="my_camera"></div>
-    <input type="button" onclick="snap()" value="Snap" />
-    <div id="results"></div>
+    <div style="width:fit-content; position: absolute;top:3rem;bottom: 0;left: 0;right: 0;margin: auto;">
+      <div id="my_camera"></div>
+      <div class=""><input type="button" class="button-74" onclick="snap()" value="Snap" /></div>
+      <form method="POST" enctype="multipart/form-data" id="myForm">
+        <table>
+          <tr>
+            <td><input type="button" class="button-74" value="Login" onclick="upload()" /></td>
+          </tr>
+        </table>
+      </form>
+      <div id="results"></div>
+      <div style="margin: 2rem;">
+        New here? Click here to <a href="{{ url_for('register') }}">register</a>
+      </div>
+    </div>
   </body>
 </html>

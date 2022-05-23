@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles.css') }}">
+
+    <title>Sign up</title>
+  </head>
+  <body>
+    <div style="width:fit-content; position: absolute;top:3rem;bottom: 0;left: 0;right: 0;margin: auto;">
+
+    <form
+      action="http://localhost:5000/uploader"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+    <div class='inputThing'>
+        <label for="username">Enter preferred username</label>
+            <input type="text" name="username" id="username" placeholder="Username">
+    </div>
+   <div>
+        <label for="file">Upload photo with clear face</label>
+          <input type="file" name="file" />
+   </div class='inputThing'>
+      <input type="submit" class='button-74' value="Sign up" />
+    </form>
+  </div>
+  </body>
+</html>
