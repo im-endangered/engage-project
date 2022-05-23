@@ -24,7 +24,7 @@ async function upload() {
   var formData = new FormData(form);
   formData.append("file", image);
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("POST", "/signup");
+  xmlhttp.open("POST", "/signin");
   xmlhttp.send(formData);
   xmlhttp.onload = () => {
     data = JSON.parse(xmlhttp.responseText);

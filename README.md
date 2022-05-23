@@ -12,5 +12,9 @@ Steps to run in your system
 
 Please note: Your local host is assumed to be 127.0.0.1 on port 5000 so if it is anything else than this, things might not work properly..
 
+Update:
+Added the sign up page.
 
-Will be working on signup part too soon. if time allows. but for now, all the datasets have to be provided in /users folder in format {name}.jpg
+While signing up, please use the photo with single face. And make sure the photo is clear
+
+After sign-up, server needs to be restarted. This is because all the reference images are loaded during the time of server initialization itself.
