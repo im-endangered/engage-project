@@ -1,6 +1,6 @@
 # engage-project
 
-A very simple face based authorization system.
+A very simple face based authentication system.
 
 
 

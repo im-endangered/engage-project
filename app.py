@@ -2,7 +2,6 @@ from PIL import Image
 from io import BytesIO
 import base64
 import urllib.request as ur
-import face_recognition
 import cv2
 import face_recognition
 import os
